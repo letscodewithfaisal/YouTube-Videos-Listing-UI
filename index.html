@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>videos.freeapi — a terminal for tutorials</title>
+<meta name="description" content="A YouTube-style video listing UI built on the FreeAPI Videos endpoint." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <span class="brand__prompt">~/videos</span><span class="brand__cursor">_</span>
+      </div>
+      <div class="termline" id="termline">
+        <span class="termline__user">guest@freeapi</span><span class="termline__colon">:</span><span class="termline__path">~$</span>
+        <span class="termline__cmd" id="termCmd">ls --sort=date</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <section class="controls">
+      <label class="search" for="searchInput">
+        <span class="search__glyph">grep -i</span>
+        <input id="searchInput" type="text" placeholder="filter by title, e.g. nextjs" autocomplete="off" />
+      </label>
+
+      <div class="flags" role="group" aria-label="Sort videos">
+        <button class="flag is-active" data-sort="date">--latest</button>
+        <button class="flag" data-sort="views">--popular</button>
+        <button class="flag" data-sort="likes">--liked</button>
+      </div>
+    </section>
+
+    <section id="statusBar" class="status" aria-live="polite"></section>
+
+    <section id="grid" class="grid" aria-label="Video results"></section>
+
+    <section id="emptyState" class="empty hidden">
+      <p class="empty__code">$ ls --sort=date</p>
+      <p class="empty__msg">no videos match that filter.</p>
+      <button id="clearFilter" class="empty__clear">clear filter</button>
+    </section>
+
+    <nav class="pager" id="pager" aria-label="Pagination">
+      <button id="prevPage" class="pager__btn" disabled>&larr; prev</button>
+      <span id="pageInfo" class="pager__info">page 1 / 1</span>
+      <button id="nextPage" class="pager__btn" disabled>next &rarr;</button>
+    </nav>
+
+  </main>
+
+  <footer class="footer">
+    <p>data via <a href="https://freeapi.app" target="_blank" rel="noopener">FreeAPI.app</a> · built for Web Dev Cohort 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
