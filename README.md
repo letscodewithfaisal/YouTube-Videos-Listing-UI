@@ -46,7 +46,7 @@ Then open the printed local URL in your browser.
 
 1. Push this repo to GitHub.
 
-Github Url : 
+Github Url : https://github.com/letscodewithfaisal/YouTube-Videos-Listing-UI 
 
 Vercel : https://you-tube-videos-listing-ui-one.vercel.app/
 
