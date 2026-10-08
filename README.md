@@ -48,7 +48,7 @@ Then open the printed local URL in your browser.
 
 Github Url : 
 
-Vercel :
+Vercel : https://you-tube-videos-listing-ui-one.vercel.app/
 
 ## API
 
