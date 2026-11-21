@@ -1,5 +1,6 @@
 (() => {
-  const API_URL = "https://api.freeapi.app/api/v1/public/youtube/videos";
+  const API_URL =
+  "https://prod-main-api-704464-00tre1p1erm.compute.instacloud-edge.com/api/v1/public/youtube/videos";
   const PAGE_SIZE = 12;
 
   const state = {
